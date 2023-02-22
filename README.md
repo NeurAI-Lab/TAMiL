@@ -1,9 +1,24 @@
 # TAMiL
 Official repository for "[Task-Aware Information Routing from Common Representation Space in Lifelong Learning](https://openreview.net/forum?id=-M0TNnyWFT5)", ICLR 2023
 
-## Code will be released soon. 
 
+## How to run?
++ python main.py  --seed 10  --dataset seq-tinyimg  --model tam --buffer_size 200   --load_best_args \
+ --img_size 64 --tensorboard --use_pairwise_loss_after_ae --pretext_task mse --notes 'experiment 1'
+        
+## Setup
 
++ Use `./main.py` to run experiments.
++ Use argument `--load_best_args` to use the best hyperparameters from the paper.
++ Use `--evaluate` to load and evaluate the model 
+## Datasets
+
+**Class-Il / Task-IL settings**
+
++ Sequential CIFAR-10
++ Sequential CIFAR-100
++ Sequential Tiny-ImageNet
++ Sequential Core50
 
 ## Cite Our Work
 
