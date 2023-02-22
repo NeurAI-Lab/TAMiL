@@ -4,7 +4,7 @@ Official repository for "[Task-Aware Information Routing from Common Representat
 
 ## How to run?
 + python main.py  --seed 10  --dataset seq-tinyimg  --model tam --buffer_size 200   --load_best_args \
- --img_size 64 --tensorboard --use_pairwise_loss_after_ae --pretext_task mse --notes 'experiment 1'
+  --tensorboard --pretext_task mse --notes 'experiment 1'
         
 ## Setup
 
