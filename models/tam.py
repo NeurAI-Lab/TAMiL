@@ -97,15 +97,7 @@ class TAM(ContinualModel):
         outputs = self.net.linear(outputs_ae * feats)
         loss += self.loss(outputs, labels)
 
-        if self.args.use_pairwise_discrepancy_loss:
-            softmax = torch.nn.Softmax(dim=-1)
-            for i in range(self.task_id):
-                outputs_enc_i = self.net.ae[i].encoder(feats)
-                pairwise_dist = torch.pairwise_distance(softmax(outputs_enc_i.detach()),
-                                                        softmax(outputs_encoder), p=1).mean()
-                loss -= self.args.pairwise_weight * (pairwise_dist)
-
-        elif self.args.use_pairwise_loss_after_ae:
+        if self.args.use_pairwise_loss_after_ae or self.args.load_best_args:
             softmax = torch.nn.Softmax(dim=-1)
             for i in range(self.task_id):
                 outputs_i = self.net.ae[i](feats)

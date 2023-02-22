@@ -23,8 +23,6 @@ def add_arguments(parser):
                         help='weight for pairwise discrepancy loss for AE')
     parser.add_argument('--code_dim', type=int, default=64,
                         help='Code dimension for AE (sigmoid)')
-    parser.add_argument('--selection_loss_weight', type=float, default=0.1,
-                        help='weight for recon loss for the wrong selection for buffered samples')
     parser.add_argument('--reg_weight', type=float, default=0.1,
                         help='EMA regularization weight')
     parser.add_argument('--ema_update_freq', type=float, default=0.05,
